@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.6.7"/>
+		<Timestamp>2020-11-06T03:08:41Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="af_duration_ms" optype="continuous" dataType="double"/>
+		<DataField name="af_danceability" optype="continuous" dataType="double"/>
+		<DataField name="af_energy" optype="continuous" dataType="double"/>
+		<DataField name="af_loudness" optype="continuous" dataType="double"/>
+		<DataField name="af_speechiness" optype="continuous" dataType="double"/>
+		<DataField name="af_acousticness" optype="continuous" dataType="double"/>
+		<DataField name="af_liveness" optype="continuous" dataType="double"/>
+		<DataField name="af_valence" optype="continuous" dataType="double"/>
+		<DataField name="af_tempo" optype="continuous" dataType="double"/>
+		<DataField name="aa_confidence_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_start_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_time_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_confidence_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_start_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_time_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_start_dif_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_time_dif_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_dif_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_start_dif_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_time_dif_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_loudness_max_dif_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_pitch_dif_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_pitch_dif_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_pitch_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_pitch_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_timbre_dif_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_timbre_dif_iqr" optype="continuous" dataType="double"/>
+		<DataField name="aa_timbre_mediana" optype="continuous" dataType="double"/>
+		<DataField name="aa_timbre_iqr" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<ClusteringModel functionName="clustering" modelClass="centerBased" numberOfClusters="9">
+		<MiningSchema>
+			<MiningField name="af_duration_ms"/>
+			<MiningField name="af_danceability"/>
+			<MiningField name="af_energy"/>
+			<MiningField name="af_loudness"/>
+			<MiningField name="af_speechiness"/>
+			<MiningField name="af_acousticness"/>
+			<MiningField name="af_liveness"/>
+			<MiningField name="af_valence"/>
+			<MiningField name="af_tempo"/>
+			<MiningField name="aa_confidence_mediana"/>
+			<MiningField name="aa_loudness_start_mediana"/>
+			<MiningField name="aa_loudness_max_time_mediana"/>
+			<MiningField name="aa_loudness_max_mediana"/>
+			<MiningField name="aa_confidence_iqr"/>
+			<MiningField name="aa_loudness_start_iqr"/>
+			<MiningField name="aa_loudness_max_time_iqr"/>
+			<MiningField name="aa_loudness_max_iqr"/>
+			<MiningField name="aa_loudness_start_dif_mediana"/>
+			<MiningField name="aa_loudness_max_time_dif_mediana"/>
+			<MiningField name="aa_loudness_max_dif_mediana"/>
+			<MiningField name="aa_loudness_start_dif_iqr"/>
+			<MiningField name="aa_loudness_max_time_dif_iqr"/>
+			<MiningField name="aa_loudness_max_dif_iqr"/>
+			<MiningField name="aa_pitch_dif_mediana"/>
+			<MiningField name="aa_pitch_dif_iqr"/>
+			<MiningField name="aa_pitch_mediana"/>
+			<MiningField name="aa_pitch_iqr"/>
+			<MiningField name="aa_timbre_dif_mediana"/>
+			<MiningField name="aa_timbre_dif_iqr"/>
+			<MiningField name="aa_timbre_mediana"/>
+			<MiningField name="aa_timbre_iqr"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="cluster" optype="categorical" dataType="string"/>
+			<OutputField name="affinity(0)" optype="continuous" dataType="double" feature="affinity" value="0"/>
+			<OutputField name="affinity(1)" optype="continuous" dataType="double" feature="affinity" value="1"/>
+			<OutputField name="affinity(2)" optype="continuous" dataType="double" feature="affinity" value="2"/>
+			<OutputField name="affinity(3)" optype="continuous" dataType="double" feature="affinity" value="3"/>
+			<OutputField name="affinity(4)" optype="continuous" dataType="double" feature="affinity" value="4"/>
+			<OutputField name="affinity(5)" optype="continuous" dataType="double" feature="affinity" value="5"/>
+			<OutputField name="affinity(6)" optype="continuous" dataType="double" feature="affinity" value="6"/>
+			<OutputField name="affinity(7)" optype="continuous" dataType="double" feature="affinity" value="7"/>
+			<OutputField name="affinity(8)" optype="continuous" dataType="double" feature="affinity" value="8"/>
+		</Output>
+		<ComparisonMeasure kind="distance">
+			<squaredEuclidean/>
+		</ComparisonMeasure>
+		<ClusteringField field="af_duration_ms"/>
+		<ClusteringField field="af_danceability"/>
+		<ClusteringField field="af_energy"/>
+		<ClusteringField field="af_loudness"/>
+		<ClusteringField field="af_speechiness"/>
+		<ClusteringField field="af_acousticness"/>
+		<ClusteringField field="af_liveness"/>
+		<ClusteringField field="af_valence"/>
+		<ClusteringField field="af_tempo"/>
+		<ClusteringField field="aa_confidence_mediana"/>
+		<ClusteringField field="aa_loudness_start_mediana"/>
+		<ClusteringField field="aa_loudness_max_time_mediana"/>
+		<ClusteringField field="aa_loudness_max_mediana"/>
+		<ClusteringField field="aa_confidence_iqr"/>
+		<ClusteringField field="aa_loudness_start_iqr"/>
+		<ClusteringField field="aa_loudness_max_time_iqr"/>
+		<ClusteringField field="aa_loudness_max_iqr"/>
+		<ClusteringField field="aa_loudness_start_dif_mediana"/>
+		<ClusteringField field="aa_loudness_max_time_dif_mediana"/>
+		<ClusteringField field="aa_loudness_max_dif_mediana"/>
+		<ClusteringField field="aa_loudness_start_dif_iqr"/>
+		<ClusteringField field="aa_loudness_max_time_dif_iqr"/>
+		<ClusteringField field="aa_loudness_max_dif_iqr"/>
+		<ClusteringField field="aa_pitch_dif_mediana"/>
+		<ClusteringField field="aa_pitch_dif_iqr"/>
+		<ClusteringField field="aa_pitch_mediana"/>
+		<ClusteringField field="aa_pitch_iqr"/>
+		<ClusteringField field="aa_timbre_dif_mediana"/>
+		<ClusteringField field="aa_timbre_dif_iqr"/>
+		<ClusteringField field="aa_timbre_mediana"/>
+		<ClusteringField field="aa_timbre_iqr"/>
+		<Cluster id="0" size="392">
+			<Array type="real">0.44371060407833957 -1.563405286996571 -1.1192069736959818 -1.219622696933034 -0.4068220894780467 0.7895615506595135 -0.2355652728421675 -1.3742947996808141 -0.7677252373119708 -1.5603803847147928 -0.9335221907850888 1.063988816541196 -1.1883757221739455 -1.4877190192272658 0.3558054018273888 1.1466374976761473 0.6808748652646404 0.5111543061321144 0.1720034441761177 0.34512940996362845 0.430062839681195 0.8704399330414815 0.7203313061769792 0.13620666187144279 -1.3322538562200597 -0.6579379993605811 -0.9102327027665057 0.21546028039640588 -0.8998006365762852 -0.8308936043218553 -0.3008043272836497</Array>
+		</Cluster>
+		<Cluster id="1" size="363">
+			<Array type="real">-0.6927495575378552 0.7748374433253714 0.604825723199012 0.8811888752177971 0.167384726481607 -0.2616668627357801 -0.3277891913066687 1.3947150495045793 0.25631875693008754 0.6259399941726375 0.7031719717931961 -0.23065011542013966 0.9602115343916569 0.39149941107513886 -0.23296859767210437 -0.48464922155417073 -0.8749476085484481 -0.40989751934048685 0.13257918070843905 -0.2717539131369994 -0.36647762683526003 -0.07152400700373722 -0.8711134020830761 -0.0717352160970892 0.7375687634847686 0.4756315080255268 0.3190373669192749 -0.05998826856745625 0.23626861432945137 0.6813762499998797 -0.3371561541503043</Array>
+		</Cluster>
+		<Cluster id="2" size="376">
+			<Array type="real">-0.13493656795253423 0.07204627603058765 -1.2510161214052105 -1.0871389804098321 -0.40530779989084154 1.1917112141118018 -0.30241853593863294 -0.2685780487457268 -0.4098568058337962 0.6297257283355754 -1.2489424332528265 0.19893603159629691 -1.1135018387152105 0.9252537167299568 0.46281906214402413 -0.054207700504064336 0.8348310041824994 -0.6144507768346533 0.054075106077390966 -0.6841140905608498 0.990054873554712 -0.9230525157664529 1.0474868440103018 -0.11953090906562687 -0.9788742503581176 -1.2468063648888492 -1.1409289404946539 -0.36986015202466355 0.25310288178990903 -1.0448277605258256 0.7351085350800768</Array>
+		</Cluster>
+		<Cluster id="3" size="490">
+			<Array type="real">-0.4658396245424881 -0.7757204779150622 -0.9735749860086091 -0.8974585540619539 -0.030916467077182725 1.1792514137993277 0.19509918605474827 -0.5913894927076886 -0.6285851404582257 -0.469124883474162 -0.8840227128069187 1.3260395027702907 -0.9627974107556887 -0.1796833381019684 0.9922415410354599 0.9243124003321693 1.0563808517460855 1.2729623304936057 -0.17146644205723682 1.1993615793548653 1.1600354678712508 0.9458309486889206 1.0233546639796598 -0.3782412717819918 -0.7445095584962724 -0.7604593480432889 -0.5361235883222331 0.5079690175511382 -0.21042033683135955 0.9637422934036748 0.7563350322867899</Array>
+		</Cluster>
+		<Cluster id="4" size="499">
+			<Array type="real">-0.19279327094591298 -0.6325719053450785 1.3684116503884092 0.7738196088163558 1.0762765958098408 -1.5280328411645279 0.17940218737623267 -0.18215864446691565 0.04362781314137567 -0.8973729867174768 1.182057973279578 -0.24156663570163497 0.8270675515788343 -0.8580893097086248 -1.5790939406238316 0.003435830411794612 -1.420690178964874 -0.05769126498732084 0.13307967602862625 -0.3111845801299695 -1.5471084112422093 0.26805494590401063 -1.345907516222593 -0.030869334113534947 0.22662144149264773 1.463658042053797 0.1015862059461042 -0.30669807073972405 -1.293870751574589 0.10702282141716349 -1.5544546053903006</Array>
+		</Cluster>
+		<Cluster id="5" size="599">
+			<Array type="real">0.09578989868801295 0.15942207011999757 -0.23965914260036508 -0.171382290190206 -1.086405050364706 0.26095967620690425 -0.029040589270626943 0.04982998470895697 -0.06012661707159574 0.17121764051795496 -0.1033510016017545 0.1442191945528055 -0.1970307738749157 0.48228112817112073 0.23859273504804138 -0.03218972310132977 0.3404011408168379 -0.2689403220537998 0.03423293617544497 -0.28654104860145047 -0.024040364520100905 -0.29983332834854 0.05656790792958227 0.09201356331354436 -0.3543808996521264 -0.43925093548124755 -0.3359538378343789 -0.28769085986561155 0.07132383806647588 -0.4165921751062119 0.08936126331211312</Array>
+		</Cluster>
+		<Cluster id="6" size="487">
+			<Array type="real">0.8819721131249791 0.6078006688112152 0.6558999256948851 0.46753754930069513 0.02596970884687666 -0.7164520597725602 8.842318235880854E-4 0.02441530658920068 0.6792992072070306 0.4217031488783925 0.27327112915539764 -1.4898690782673716 0.4472321287921426 0.2795158621388346 -0.00793713994894229 -1.240933184886776 -0.13005814299192045 5.912983797610812E-4 -0.06656328212119093 0.3742589802671744 -0.20918560812933717 -0.8619733647183081 0.03122331131401201 0.2401158983681576 1.24988456183533 0.5835629624865596 1.2151245536361888 0.3840554334807142 1.0077951407385817 -0.08415497684321174 0.2786266409635281</Array>
+		</Cluster>
+		<Cluster id="7" size="444">
+			<Array type="real">-0.015357278691956834 0.10395996418091173 0.7953778011708589 1.211697731508355 0.5433526392149254 -0.691442902301896 0.6128820358788866 0.1508182996928304 0.8233934517435915 -0.22967301714134714 1.2008204767689004 -0.3564960004396929 1.203150566033616 -0.11588907272777854 -0.6105805290528582 0.39441867252716073 -0.6325860299503961 0.16974424704096158 -0.3064276702400709 0.04598020928894089 -0.8928443864733411 0.5557471319779916 -0.9109075580493056 0.21862969501381116 0.47835036138353393 0.41832772927440126 0.8949847528532412 0.277849210320862 -0.3595097967802578 0.7458031499791835 -0.5605436272418906</Array>
+		</Cluster>
+		<Cluster id="8" size="432">
+			<Array type="real">-0.08079175910809819 1.3091736881132046 -0.10684641350058738 -0.10971114763689452 0.29214439342663495 0.09011099275844259 -0.2531210392529115 0.9560306322256665 -0.026556757150217197 1.482186250019976 -0.410367229525323 -0.3295564369258017 -0.09636575346791311 0.5400098134217871 0.4717580342354689 -0.6125104071328269 0.15590403036627007 -0.7755332340898119 0.07108812282810976 -0.5626972945936526 0.7101107174921246 -0.4895462293447656 0.37610060140908314 -0.11445570661728491 0.6170738541392053 -0.031052263448315617 0.21839331661105307 -0.3594957308786679 1.259942115313445 -0.22531677996299426 0.9883810468227433</Array>
+		</Cluster>
+	</ClusteringModel>
+</PMML>
